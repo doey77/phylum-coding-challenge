@@ -54,16 +54,14 @@ def largest(data: Dict) -> str:
     return result_node['name']
 
 def largest_recurs(node: Dict) -> int:
-    # Base case
+
     if (node == None):
         return float('-inf')
   
-    # Return maximum of 3 values:
-    # 1) Root's data 2) Max in Left Subtree
-    # 3) Max in right subtree
     res = node['data']
     lres = largest_recurs(node['left_child'])
     rres = largest_recurs(node['right_child'])
+    
     if (lres > res):
         res = lres
     if (rres > res):
@@ -179,5 +177,5 @@ def main():
             if result:
                 results[key] = result
         print(results)
-        
+
 main()
